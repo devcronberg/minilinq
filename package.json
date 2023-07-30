@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "Simple LINQ (C#) library implemented in JS (solution for training assignment - not for production)",
     "main": "minilinq.js",
+    "repository": {
+        "url": "https://github.com/devcronberg/minilinq.git",
+        "type": "git"
+    },
     "scripts": {
         "test": "jest",
         "prebuild": "npm run lint && rimraf minilinq.min.js",
