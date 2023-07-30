@@ -89,13 +89,37 @@ Array.prototype.last = function (predicate) {
     return undefined;
 };
 
-// let t = [1, 2, 3, 4].last();
-// console.log(t);
+Array.prototype.count = function (predicate) {
+    return predicate ? [...this].filter(predicate).length : [...this].length;
+};
 
-// let arr = [
-//     { id: 1, name: "Alice", age: 20 },
-//     { id: 2, name: "Charlie", age: 20 },
-//     { id: 3, name: "Anny", age: 20 },
-//     { id: 4, name: "Bob", age: 30 },
-// ];
-// console.log(arr.last().id);
+Array.prototype.single = function (predicate) {
+    const result = [...this].filter(predicate);
+    if (result.length !== 1)
+        throw new Error(
+            "Expected exactly one match, but found: " + result.length
+        );
+    return result[0];
+};
+
+Array.prototype.orderByDescending = function (selector) {
+    return [...this].sort((a, b) => {
+        const aValue = selector(a);
+        const bValue = selector(b);
+
+        if (aValue < bValue) {
+            return 1;
+        } else if (aValue > bValue) {
+            return -1;
+        } else {
+            return 0;
+        }
+    });
+};
+
+Array.prototype.contains = function (
+    value,
+    equalityComparer = (a, b) => a === b
+) {
+    return [...this].some((item) => equalityComparer(item, value));
+};

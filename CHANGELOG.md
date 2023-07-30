@@ -2,6 +2,23 @@
 
 Here are the release notes for MiniLinq:
 
+Selvfølgelig, her er en skitse til din changelog:
+
+## Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+
+## [1.0.1] - 2023-07-31
+
+### Added
+- New `count` method that counts the elements in an array. It counts all elements if no predicate is given, otherwise it counts only elements that satisfy the predicate.
+- New `single` method that returns the single element of an array that satisfies a condition. Throws an error if no or multiple elements satisfy the condition.
+- New `orderByDescending` method that sorts an array in descending order based on a key.
+- New `contains` method that checks whether an array includes a certain value.
+- Unit tests for all the new methods.
+
 ## [v1.0.0] - 2023-08-04
 
 This is the initial release of MiniLinq, a lightweight JavaScript library that mimics some of the most commonly used LINQ methods from .NET. 

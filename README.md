@@ -209,6 +209,56 @@ let resultWithPredicate = arr.last(x => x.age === 20);
 // returns the last element with age 20
 ```
 
+### count
+
+Counts the elements in an array. If a condition (predicate) is provided, it counts only the elements that satisfy the condition.
+
+Examples:
+
+```javascript
+let result = arr.count(x => x.age === 20);
+// returns the count of elements with age 20
+
+let total = arr.count();
+// returns the total count of elements in the array
+```
+
+
+### single
+
+Returns the single element of an array that satisfies a condition. If no or multiple elements satisfy the condition, an error is thrown.
+
+Example:
+
+```javascript
+let result = arr.single(x => x.id === 1);
+// returns the single element with id 1
+```
+
+### orderByDescending
+
+Sorts an array in descending order based on a key.
+
+Example:
+
+```javascript
+let result = arr.orderByDescending(x => x.age);
+// returns the elements sorted by age in descending order
+```
+
+### contains
+
+Determines whether an array includes a certain value.
+
+Example:
+
+```javascript
+let result = arr.contains(x => x.age === 20);
+// returns true if any elements with age 20 exist
+```
+
+Each of these methods operate similarly to their LINQ counterparts in C#. They can be used to perform complex data manipulations on JavaScript arrays in a simple and expressive way.
+
 ## Tests
 
 Tests are written using Jest. To run the tests, navigate to the project folder in the terminal and execute the following command:

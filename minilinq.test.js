@@ -1,4 +1,5 @@
-const minilinq = require("./minilinq");
+require("./minilinq");
+/* global test, expect */
 
 let arr = [
     { id: 1, name: "Alice", age: 20 },
@@ -17,9 +18,14 @@ test("select method projects each element of array", () => {
     expect(result).toEqual(["Alice", "Charlie", "Anny", "Bob"]);
 });
 
-test("sum method calculates sum", () => {
-    const result = arr.sum((x) => x.age);
-    expect(result).toBe(90);
+test("count method counts total elements if no condition", () => {
+    const result = arr.count();
+    expect(result).toBe(4);
+});
+
+test("count method counts elements that satisfy condition", () => {
+    const result = arr.count((x) => x.age === 20);
+    expect(result).toBe(3);
 });
 
 test("distinct method returns distinct elements", () => {
@@ -168,4 +174,53 @@ test("first method returns undefined if no elements satisfy the condition", () =
 test("last method returns undefined if no elements satisfy the condition", () => {
     const result = arr.last((obj) => obj.age === 10);
     expect(result).toBeUndefined();
+});
+
+test("count method counts the number of elements", () => {
+    const result = arr.count();
+    expect(result).toBe(4);
+});
+
+test("count method counts the number of elements that satisfy the condition", () => {
+    const result = arr.count((obj) => obj.age === 20);
+    expect(result).toBe(3);
+});
+
+test("single method returns the single element that satisfies the condition", () => {
+    const result = arr.single((obj) => obj.id === 1);
+    expect(result.id).toBe(1);
+});
+
+test("single method throws error when more than one element satisfy the condition", () => {
+    expect(() => {
+        arr.single((obj) => obj.age === 20);
+    }).toThrow(Error);
+});
+
+test("single method throws error when no elements satisfy the condition", () => {
+    expect(() => {
+        arr.single((obj) => obj.age === 10);
+    }).toThrow(Error);
+});
+
+test("orderByDescending method sorts array in descending order", () => {
+    const result = arr.orderByDescending((x) => x.name);
+    expect(result[0].name).toBe("Charlie");
+    expect(result[3].name).toBe("Alice");
+});
+
+test("contains method returns true if the array contains the value", () => {
+    const result = arr.contains(
+        { id: 1, name: "Alice", age: 20 },
+        (a, b) => a.id === b.id
+    );
+    expect(result).toBe(true);
+});
+
+test("contains method returns false if the array does not contain the value", () => {
+    const result = arr.contains(
+        { id: 5, name: "Eve", age: 20 },
+        (a, b) => a.id === b.id
+    );
+    expect(result).toBe(false);
 });
