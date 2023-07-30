@@ -224,3 +224,21 @@ test("contains method returns false if the array does not contain the value", ()
     );
     expect(result).toBe(false);
 });
+
+test("min method calculates min for array of integers with no selector", () => {
+    const numbers = [1, 2, 3, 4, 5];
+    const result = numbers.min();
+    expect(result).toBe(1);
+});
+
+test("max method calculates max for array of integers with no selector", () => {
+    const numbers = [1, 2, 3, 4, 5];
+    const result = numbers.max();
+    expect(result).toBe(5);
+});
+
+test("sum method calculates sum for array of integers with no selector", () => {
+    const numbers = [1, 2, 3, 4, 5];
+    const result = numbers.sum();
+    expect(result).toBe(15);
+});

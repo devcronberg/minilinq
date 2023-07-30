@@ -71,6 +71,12 @@ let result = arr.sum(x => x.age);
 // returns 90
 ```
 
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const result = numbers.sum();
+// 15
+```
+
 ### distinct
 
 Returns distinct elements from a sequence by using a specified selector to compare values.
@@ -104,6 +110,12 @@ let result = arr.min(x => x.age);
 // returns 20
 ```
 
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const result = numbers.min();
+// 1
+```
+
 ### max
 
 Returns the maximum value in a sequence of values.
@@ -113,6 +125,12 @@ Example:
 ```javascript
 let result = arr.max(x => x.age);
 // returns 30
+```
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const result = numbers.max();
+// 5
 ```
 
 ### take

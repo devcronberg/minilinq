@@ -10,6 +10,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.0.2] - 2023-07-31
+
+### Added
+
+- New `count` method that counts the number of elements in the array that satisfy a given condition, or all elements if no condition is provided.
+- Tests for the new `count` method.
+
+### Fixed
+
+- Updated `sum`, `min`, and `max` methods to work with arrays of numbers without a selector function.
+- Added tests to verify that the updated `sum`, `min`, and `max` methods work correctly with arrays of numbers.
+  
 ## [1.0.1] - 2023-07-31
 
 ### Added

@@ -26,19 +26,18 @@ Array.prototype.orderBy = function (selector) {
     });
 };
 
-Array.prototype.sum = function (predicate) {
-    return [...this].reduce(
-        (prev, curr) => prev + (predicate ? predicate(curr) : curr),
-        0
-    );
+Array.prototype.sum = function (selector) {
+    return selector
+        ? [...this].reduce((acc, x) => acc + selector(x), 0)
+        : [...this].reduce((acc, x) => acc + x, 0);
 };
 
-Array.prototype.min = function (predicate) {
-    return Math.min(...[...this].map(predicate ? predicate : (item) => item));
+Array.prototype.min = function (selector) {
+    return selector ? Math.min(...this.map(selector)) : Math.min(...this);
 };
 
-Array.prototype.max = function (predicate) {
-    return Math.max(...[...this].map(predicate ? predicate : (item) => item));
+Array.prototype.max = function (selector) {
+    return selector ? Math.max(...this.map(selector)) : Math.max(...this);
 };
 
 Array.prototype.take = function (count) {
