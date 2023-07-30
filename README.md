@@ -231,6 +231,4 @@ This will create or update the `minilinq.min.js` file in the project root.
 
 ## License
 
-This project is
-
- licensed under the MIT License.
+This project is licensed under the MIT License.
