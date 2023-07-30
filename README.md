@@ -6,12 +6,16 @@ MiniLinq is a lightweight JavaScript library that mimics some of the most common
 
 ## Installation
 
-1. Download the `minilinq.min.js` file from the repository.
+1. Download the `minilinq.min.js` file from the [artifacts](https://github.com/devcronberg/minilinq/actions/workflows/node.yml) section of the repository (click on ).
+
 2. Include the `minilinq.min.js` file in your HTML file:
 
-    ```html
-    <script src="path/to/minilinq.min.js"></script>
-    ```
+```html
+<script src="path/to/minilinq.min.js"></script>
+```
+
+You can also use [the `minilinq.js` file](minilinq.js).
+
 
 ## Usage
 
