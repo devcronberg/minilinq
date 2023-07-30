@@ -10,9 +10,9 @@ MiniLinq is a lightweight JavaScript library that mimics some of the most common
 
 2. Include the `minilinq.min.js` file in your HTML file:
 
-```html
-<script src="path/to/minilinq.min.js"></script>
-```
+    ```html
+    <script src="path/to/minilinq.min.js"></script>
+    ```
 
 You can also use [the `minilinq.js` file](minilinq.js).
 
